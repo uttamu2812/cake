@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake Shop</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <!-- Include jQuery from a CDN -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Cake Shop</h1>
+    </header>
+
+    <main>
+        <div class="filter-container">
+            <label for="flavour-filter">Filter by Flavour:</label>
+            <select id="flavour-filter">
+                <option value="all">All Flavours</option>
+                <option value="Vanilla">Vanilla</option>
+                <option value="Chocolate">Chocolate</option>
+                <option value="Lemon">Lemon</option>
+                <option value="Red Velvet">Red Velvet</option>
+            </select>
+        </div>
+        
+        <div class="cake-grid" id="cake-products">
+            <!-- Cake product cards will be dynamically inserted here by jQuery -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Cake Shop. All rights reserved.</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

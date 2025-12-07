@@ -1,0 +1,739 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.cart-icon-container {
+    position: relative;
+}
+
+.cart-icon {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cart-icon:hover {
+    background-color: #ff5252;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.filter-container {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#flavour-filter {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.cake-grid {
+    display: grid;
+    /* Responsive grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.cake-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.cake-card:hover {
+    transform: translateY(-5px);
+}
+
+.cake-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.cake-details {
+    padding: 20px;
+}
+
+.cake-details h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #e91e63;
+}
+
+.cake-details p {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.options-list {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.options-list li {
+    background-color: #f1f1f1;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.option-name {
+    font-weight: 600;
+    color: #333;
+    min-width: 150px;
+}
+
+.option-price {
+    color: #cda45e;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+}
+
+.cake-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.add-to-cart:hover {
+    background-color: #ff5252;
+    transform: scale(1.05);
+}
+
+.order-now {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.order-now:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Cart sidebar styles */
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.filters-and-products {
+    flex: 1;
+}
+
+.cart-sidebar {
+    position: fixed;
+    right: -400px;
+    top: 0;
+    width: 400px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.cart-sidebar.active {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.cart-items {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.empty-cart {
+    text-align: center;
+    color: #999;
+    padding: 40px 20px;
+}
+
+.cart-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
+
+.cart-item-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+}
+
+.cart-item-info p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.cart-item-actions {
+    margin-top: 10px;
+}
+
+.remove-item {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.remove-item:hover {
+    background-color: #ff5252;
+}
+
+.cart-footer {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.cart-total {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+.checkout-btn, .clear-cart-btn {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.checkout-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.checkout-btn:hover {
+    background-color: #45a049;
+}
+
+.clear-cart-btn {
+    background-color: #ddd;
+    color: #333;
+}
+
+.clear-cart-btn:hover {
+    background-color: #ccc;
+}
+
+/* Filters Section */
+.filters-section {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.filter-row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 150px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.filter-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.filter-group select:hover {
+    border-color: #cda45e;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group label {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.checkbox-group input[type="checkbox"] {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+/* Cake Card Badges */
+.cake-card-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f8f9fa;
+}
+
+.product-code {
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;
+}
+
+.cake-type {
+    background-color: #cda45e;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.cake-badges {
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+.badge-3d {
+    background-color: #ff6b6b;
+}
+
+.badge-fondant {
+    background-color: #4CAF50;
+}
+
+.badge-custom {
+    background-color: #2196F3;
+}
+
+.no-results {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+    font-size: 16px;
+}
+
+/* Size & Shape Selection */
+.size-shape-options {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.options-title {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.radio-option input[type="radio"] {
+    margin-right: 10px;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.radio-option label {
+    margin: 0;
+    cursor: pointer;
+    font-size: 14px;
+    color: #555;
+}
+
+.radio-option input[type="radio"]:checked + label {
+    color: #cda45e;
+    font-weight: 600;
+}
+
+/* Option Label Enhanced Styling */
+.option-label {
+    flex: 1;
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    text-align: center;
+}
+
+.radio-option input[type="radio"]:checked + .option-label {
+    border-color: #cda45e;
+    background-color: #fff8f0;
+    box-shadow: 0 0 8px rgba(205, 164, 94, 0.3);
+    transform: scale(1.02);
+}
+
+.option-header {
+    margin-bottom: 8px;
+}
+
+.option-name {
+    font-weight: 700;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.option-middle {
+    margin: 6px 0;
+    padding: 6px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.option-size-value {
+    font-weight: 600;
+    color: #555;
+    font-size: 13px;
+}
+
+.option-footer {
+    margin-top: auto;
+    padding-top: 8px;
+}
+
+.option-price {
+    color: #cda45e;
+    font-weight: bold;
+    font-size: 18px;
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: #fffaf0;
+    border-radius: 4px;
+}
+
+/* Cart Modal - Enhanced Details */
+.pricing-details {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 10px 0;
+}
+
+.pricing-details p {
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+.base-price-detail {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.item-price-detail {
+    color: #3498db;
+    font-weight: bold;
+}
+
+.item-total-amount {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.cart-total-price {
+    color: #c0392b;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.size-detail {
+    background-color: #e3f2fd;
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: #1565c0;
+    font-weight: 600;
+}
+
+/* Add-ons List */
+.addons-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 8px 0;
+}
+
+.addons-list li {
+    padding: 6px 10px;
+    color: #555;
+    background-color: #f9f9f9;
+    margin-bottom: 4px;
+    border-left: 3px solid #cda45e;
+    border-radius: 2px;
+}
+
+.addons-list li:last-child {
+    margin-bottom: 0;
+}
+.empty-cart-msg {
+    text-align: center;
+    color: #999;
+    padding: 60px 20px;
+    font-size: 18px;
+}
+
+/* Addons Pricing Display */
+.addons-pricing-section {
+    margin-bottom: 15px;
+    padding: 12px;
+    background-color: #f0fdf4;
+    border-left: 4px solid #22c55e;
+    border-radius: 6px;
+}
+
+.selected-addons-pricing {
+    display: flex;
+    flex-direction: column;
+}
+
+.selected-size-label {
+    margin: 0 0 10px 0;
+    color: #166534;
+    font-size: 14px;
+}
+
+.addons-price-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.addon-price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: 1px solid #e0e7ff;
+}
+
+.addon-label {
+    font-weight: 500;
+    color: #333;
+    font-size: 14px;
+}
+
+.addon-cost {
+    color: #22c55e;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* Pricing Summary */
+.pricing-summary {
+    margin-top: 15px;
+    background: linear-gradient(135deg, #fff9f0 0%, #fffbf7 100%);
+    border: 2px solid #fde047;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.price-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #ffe4b5;
+}
+
+.price-row.base-row {
+    font-weight: 600;
+    color: #333;
+}
+
+.price-row.addon-price-row {
+    padding: 6px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.addon-breakdown-name {
+    color: #555;
+    font-weight: 500;
+}
+
+.addon-breakdown-price {
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+.price-row.total-row {
+    padding: 12px 0;
+    border-top: 2px solid #fbbf24;
+    border-bottom: none;
+    font-size: 16px;
+}
+
+.price-label {
+    color: #333;
+    font-weight: 600;
+}
+
+.price-value {
+    color: #1f2937;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.price-value.base-price {
+    color: #059669;
+}
+
+.price-value.total {
+    color: #dc2626;
+    font-size: 18px;
+}
+
+@media (max-width: 480px) {
+    .filter-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .cart-sidebar {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .filter-row {
+        flex-direction: column;
+    }
+    
+    .filter-group {
+        width: 100%;
+    }
+    
+    .size-shape-options,
+    .addons-section {
+        padding: 12px;
+    }
+    
+    .radio-option,
+    .addon-option {
+        flex-wrap: wrap;
+    }
+}

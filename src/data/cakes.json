@@ -1,0 +1,173 @@
+[
+  {
+    "productCode": "CAKE001",
+    "id": 1,
+    "name": "Classic Vanilla Bean",
+    "description": "A timeless classic with rich vanilla flavor and buttercream frosting.",
+    "type": "Celebration",
+    "flavour": "Vanilla",
+    "shape": ["Round", "Square"],
+    "size": ["Small (6-inc)", "Medium (8-inc)", "Large (10-inc)"],
+    "tier": ["1-Tier", "2-Tier", "3-Tier"],
+    "photo": "./assets/cake-pictures/1.jpeg",
+    "3D": false,
+    "fondant": "Yes",
+    "customized": true,
+    "photoPrintable": true,
+    "options": [
+      {
+        "size": "Small (6-inc)",
+        "price": 35.00,
+        "addons": {
+          "3D_addon": 10.00,
+          "fondant_addon": 8.00,
+          "photo_addon": 3.00
+        }
+      },
+      {
+        "size": "Medium (8-inc)",
+        "price": 50.00,
+        "addons": {
+          "3D_addon": 15.00,
+          "fondant_addon": 10.00,
+          "photo_addon": 5.00
+        }
+      },
+      {
+        "size": "Large (10-inc)",
+        "price": 75.00,
+        "addons": {
+          "3D_addon": 20.00,
+          "fondant_addon": 12.00,
+          "photo_addon": 7.00
+        }
+      }
+    ]
+  },
+  {
+    "productCode": "CAKE002",
+    "id": 2,
+    "name": "Decadent Chocolate Fudge",
+    "description": "Layers of moist chocolate cake and smooth, rich fudge frosting.",
+    "type": "Premium",
+    "flavour": "Chocolate",
+    "shape": ["Round", "Square"],
+    "size": ["Small (6-inc)", "Medium (8-inc)", "Large (10-inc)"],
+    "tier": ["1-Tier", "2-Tier"],
+    "photo": "./assets/cake-pictures/2.jpg",
+    "3D": true,
+    "fondant": "Yes",
+    "customized": true,
+    "photoPrintable": true,
+    "options": [
+      {
+        "size": "Small (6-inc)",
+        "price": 40.00,
+        "addons": {
+          "3D_addon": 15.00,
+          "fondant_addon": 10.00,
+          "photo_addon": 3.00
+        }
+      },
+      {
+        "size": "Medium (8-inc)",
+        "price": 55.00,
+        "addons": {
+          "3D_addon": 20.00,
+          "fondant_addon": 12.00,
+          "photo_addon": 5.00
+        }
+      },
+      {
+        "size": "Large (10-inc)",
+        "price": 80.00,
+        "addons": {
+          "3D_addon": 25.00,
+          "fondant_addon": 15.00,
+          "photo_addon": 7.00
+        }
+      }
+    ]
+  },
+  {
+    "productCode": "CAKE003",
+    "id": 3,
+    "name": "Luscious Lemon Berry",
+    "description": "Light lemon sponge with fresh berry compote filling and cream cheese icing.",
+    "type": "Seasonal",
+    "flavour": "Lemon",
+    "shape": ["Round"],
+    "size": ["Small (6-inc)", "Medium (8-inc)"],
+    "tier": ["1-Tier", "2-Tier"],
+    "photo": "./assets/cake-pictures/1.jpeg",
+    "3D": false,
+    "fondant": "No",
+    "customized": false,
+    "photoPrintable": false,
+    "options": [
+      {
+        "size": "Small (6-inc)",
+        "price": 38.00,
+        "addons": {
+          "3D_addon": 0.00,
+          "fondant_addon": 6.00,
+          "photo_addon": 0.00
+        }
+      },
+      {
+        "size": "Medium (8-inc)",
+        "price": 53.00,
+        "addons": {
+          "3D_addon": 0.00,
+          "fondant_addon": 8.00,
+          "photo_addon": 0.00
+        }
+      }
+    ]
+  },
+  {
+    "productCode": "CAKE004",
+    "id": 4,
+    "name": "Red Velvet Dream",
+    "description": "Classic red velvet cake with tangy cream cheese frosting.",
+    "type": "Premium",
+    "flavour": "Red Velvet",
+    "shape": ["Round", "Heart"],
+    "size": ["Small (6-inc)", "Medium (8-inc)", "Large (10-inc)"],
+    "tier": ["1-Tier", "2-Tier", "3-Tier"],
+    "photo": "./assets/cake-pictures/2.jpg",
+    "3D": true,
+    "fondant": "Yes",
+    "customized": true,
+    "photoPrintable": true,
+    "options": [
+      {
+        "size": "Small (6-inc)",
+        "price": 36.00,
+        "addons": {
+          "3D_addon": 12.00,
+          "fondant_addon": 9.00,
+          "photo_addon": 3.00
+        }
+      },
+      {
+        "size": "Medium (8-inc)",
+        "price": 51.00,
+        "addons": {
+          "3D_addon": 18.00,
+          "fondant_addon": 11.00,
+          "photo_addon": 5.00
+        }
+      },
+      {
+        "size": "Large (10-inc)",
+        "price": 76.00,
+        "addons": {
+          "3D_addon": 22.00,
+          "fondant_addon": 13.00,
+          "photo_addon": 7.00
+        }
+      }
+    ]
+  }
+]
